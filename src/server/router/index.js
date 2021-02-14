@@ -93,11 +93,11 @@ module.exports = (
         return
       }
       const access_token = createToken(
-        { email, password },
+        { email },
         secretKey,
         expiresIn
       )
-      res.status(200).json({ access_token })
+      res.status(200).json({ access_token, user: authenticatedUsers })
     })
   }
 
